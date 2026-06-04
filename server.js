@@ -173,7 +173,7 @@ const text =
     }
 
     return res.send(
-      `🏆 Pros/Streamers | 🔵藍方：${blue.length ? blue.join("、") : "無"} | 🔴紅方：${red.length ? red.join("、") : "無"}`
+      `cmonbruh Pros/Streamers | 🔵藍方：${blue.length ? blue.join("、") : "無"} | 🔴紅方：${red.length ? red.join("、") : "無"}`
     );
 
   } catch (err) {
