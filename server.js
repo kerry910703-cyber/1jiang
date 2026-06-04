@@ -184,7 +184,7 @@ const text =
       err.response.status === 500
     ) {
       return res.send(
-        "😴 目前不在遊戲中"
+        "cmonBruh 目前不在遊戲中"
       );
     }
 
