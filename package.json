@@ -1,0 +1,12 @@
+{
+  "name": "twitch-deeplol-bot",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "express": "^4.19.2"
+  }
+}
