@@ -80,7 +80,21 @@ app.get("/game", async (req, res) => {
     const blueFound = [];
     const redFound = [];
 
+    let totalLp = 0;
+    let totalPlayers = 0;
+
     for (const p of data.participants_list || []) {
+      // 計算平均 LP
+const lp =
+  p?.summoner_realtime_data
+    ?.season_tier_info_dict
+    ?.ranked_solo_5x5
+    ?.league_points;
+
+if (typeof lp === "number") {
+  totalLp += lp;
+  totalPlayers++;
+}
 
       // 排除自己
       if (p.puu_id === MY_PUUID) {
@@ -145,8 +159,19 @@ const position =
   rawPosition ||
   "?";
 
+const lp =
+  p?.summoner_realtime_data
+    ?.season_tier_info_dict
+    ?.ranked_solo_5x5
+    ?.league_points;
+
+const lpText =
+  typeof lp === "number"
+    ? ` ${lp}LP`
+    : "";
+
 const text =
-  `${displayName}(${status.toUpperCase()})(${position} ${championName})`;
+  `${displayName}(${status.toUpperCase()})(${position} ${championName}${lpText})`;
 
       // 藍紅方
       if (p.side === "BLUE") {
@@ -172,9 +197,14 @@ const text =
       );
     }
 
-    return res.send(
-      `cmonBruh Pros/Streamers | 🔵藍方：${blue.length ? blue.join("、") : "無"} | 🔴紅方：${red.length ? red.join("、") : "無"}`
-    );
+    const avgLp =
+  totalPlayers > 0
+    ? Math.round(totalLp / totalPlayers)
+    : 0;
+
+return res.send(
+  `cmonBruh Avg ${avgLp}LP | 🔵藍方：${blue.length ? blue.join("、") : "無"} | 🔴紅方：${red.length ? red.join("、") : "無"}`
+);
 
   } catch (err) {
 
