@@ -195,7 +195,7 @@ const text =
     : 0;
 
 return res.send(
-  `cmonBruh Avg ${avgLp}LP | 🔵藍方：${blue.length ? blue.join("、") : "無"} | 🔴紅方：${red.length ? red.join("、") : "無"}`
+  `cmonBruh 這場平均 ${avgLp}LP | 🔵藍方：${blue.length ? blue.join("、") : "無"} | 🔴紅方：${red.length ? red.join("、") : "無"}`
 );
 
   } catch (err) {
