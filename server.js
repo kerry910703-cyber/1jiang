@@ -12,9 +12,7 @@ const API_URL =
   "&season=27" +
   "&match_id=8244799739";
 
-// ===== 排除自己 =====
-const MY_PUUID =
-  "1UOu-KypCbTFlt0kyJ4x_Xot378DAL2Tfxhss05vxsrefqgi1L6SCUVUY2pkkBHpQgcs0oZugQMq-Q";
+
 // ===== 位置中文 =====
 const positionMap = {
   TOP: "上路",
