@@ -116,12 +116,37 @@ app.get("/game", async (req, res) => {
             "未知玩家";
 
       // 英雄名稱
-      const championName =
-        championMap[p.champion_id] ||
-        "未知英雄";
+const championName =
+  championMap[p.champion_id] ||
+  "未知英雄";
 
-      const text =
-        `${displayName}(${status.toUpperCase()})(${championName})`;
+// 嘗試抓位置
+const rawPosition =
+  p.position ||
+  p.team_position ||
+  p.individual_position ||
+  p.lane ||
+  p.role ||
+  "";
+
+// 中文位置
+const positionMap = {
+  TOP: "上路",
+  JUNGLE: "打野",
+  MID: "中路",
+  BOTTOM: "下路",
+  ADC: "下路",
+  SUPPORT: "輔助",
+  UTILITY: "輔助"
+};
+
+const position =
+  positionMap[rawPosition] ||
+  rawPosition ||
+  "?";
+
+const text =
+  `${displayName}(${status.toUpperCase()})(${position} ${championName})`;
 
       // 藍紅方
       if (p.side === "BLUE") {
