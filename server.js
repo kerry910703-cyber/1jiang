@@ -15,6 +15,16 @@ const API_URL =
 // ===== 排除自己 =====
 const MY_PUUID =
   "1UOu-KypCbTFlt0kyJ4x_Xot378DAL2Tfxhss05vxsrefqgi1L6SCUVUY2pkkBHpQgcs0oZugQMq-Q";
+// ===== 位置中文 =====
+const positionMap = {
+  TOP: "上路",
+  JUNGLE: "打野",
+  MID: "中路",
+  BOTTOM: "下路",
+  ADC: "下路",
+  SUPPORT: "輔助",
+  UTILITY: "輔助"
+};
 
 // ===== 英雄中文資料 =====
 let championMap = {};
@@ -143,27 +153,14 @@ const rawPosition =
   p.role ||
   "";
 
-// 中文位置
-const positionMap = {
-  TOP: "上路",
-  JUNGLE: "打野",
-  MID: "中路",
-  BOTTOM: "下路",
-  ADC: "下路",
-  SUPPORT: "輔助",
-  UTILITY: "輔助"
-};
+
 
 const position =
   positionMap[rawPosition] ||
   rawPosition ||
   "?";
 
-const lp =
-  p?.summoner_realtime_data
-    ?.season_tier_info_dict
-    ?.ranked_solo_5x5
-    ?.league_points;
+
 
 const lpText =
   typeof lp === "number"
