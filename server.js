@@ -73,7 +73,7 @@ app.get("/game", async (req, res) => {
     // 沒在遊戲
     if (!data?.playing) {
       return res.send(
-        "😴 目前不在遊戲中"
+        "cmonBruh 目前不在遊戲中"
       );
     }
 
