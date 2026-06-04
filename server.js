@@ -104,10 +104,7 @@ if (typeof lp === "number") {
   totalPlayers++;
 }
 
-      // 排除自己
-      if (p.puu_id === MY_PUUID) {
-        continue;
-      }
+      
 
       const info =
         p?.summoner_data
