@@ -7,14 +7,14 @@ const PORT = process.env.PORT || 3000;
 // ===== 你的 Deeplol API =====
 const API_URL =
   "https://b2c-api-cdn.deeplol.gg/ingame/ingame_info" +
-  "?puu_id=hMA6bpw0bJdUiH9dDK87HZ0Fjr1IyUwNBLtmIqbVDK5bdIUMKfze6qP3TAZz8UNwKLBnund1W7_q_Q" +
+  "?puu_id=1UOu-KypCbTFlt0kyJ4x_Xot378DAL2Tfxhss05vxsrefqgi1L6SCUVUY2pkkBHpQgcs0oZugQMq-Q" +
   "&platform_id=KR" +
   "&season=27" +
-  "&match_id=8240667986";
+  "&match_id=8244799739";
 
 // ===== 排除自己 =====
 const MY_PUUID =
-  "hMA6bpw0bJdUiH9dDK87HZ0Fjr1IyUwNBLtmIqbVDK5bdIUMKfze6qP3TAZz8UNwKLBnund1W7_q_Q";
+  "1UOu-KypCbTFlt0kyJ4x_Xot378DAL2Tfxhss05vxsrefqgi1L6SCUVUY2pkkBHpQgcs0oZugQMq-Q";
 
 // ===== 英雄中文資料 =====
 let championMap = {};
