@@ -185,7 +185,7 @@ const text =
       red.length === 0
     ) {
       return res.send(
-        "cmonBruh 這把沒撞到 PRO / STR"
+        "這把沒撞到cmonBruh"
       );
     }
 
